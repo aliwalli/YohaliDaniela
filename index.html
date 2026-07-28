@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="El blog personal de Yohali: pensamientos, música, fotografías y cosas misticas que no tienen nada que ver con navidad."
+    >
+
+    <title>Aliiii</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <a href="#inicio" class="logo">
+            ALI<span>★</span>
+        </a>
+
+        <nav class="navegacion" id="navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#blog">Blog</a>
+            <a href="#favoritos">Favoritos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="acciones">
+            <button
+                id="botonTema"
+                class="boton-tema"
+                aria-label="Cambiar tema"
+                title="Cambiar tema"
+            >
+                ☾
+            </button>
+
+            <button
+                id="botonMenu"
+                class="boton-menu"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- PORTADA -->
+        <section class="portada" id="inicio">
+            <div class="decoracion decoracion-uno"></div>
+            <div class="decoracion decoracion-dos"></div>
+
+            <div class="portada-contenido">
+                <p class="etiqueta">BIENVENIDEEEE</p>
+
+                <h1>
+                    Hola, soy Yohali. Ali pa los compas
+                    <span>Este es mi rincón personal.</span>
+                </h1>
+
+                <p class="introduccion">
+                    Un lugar para guardar pensamientos, música,
+                    fotografías, ideas, obsesiones temporales y todas
+                    esas cosas que no caben en una biografía de Instagram.
+                </p>
+
+                <div class="botones-portada">
+                    <a href="#blog" class="boton boton-principal">
+                        Leer el blog
+                    </a>
+
+                    <a href="#sobre-mi" class="boton boton-secundario">
+                        Conocerme un poco
+                    </a>
+                </div>
+
+                <p class="nota-portada">
+                    Actualmente pensando demasiado y escuchando música.
+                </p>
+            </div>
+
+            <aside class="tarjeta-estado">
+                <div class="estado-superior">
+                    <span>ESTADO ACTUAL</span>
+                    <span class="indicador"></span>
+                </div>
+
+                <p class="emoji-estado">☕</p>
+
+                <h2>Construyendo este lugar</h2>
+
+                <p>
+                    Esta página probablemente siempre estará en proceso.
+                    Esa es parte de la gracia.
+                </p>
+
+                <div class="mini-datos">
+                    <div>
+                        <span>Escuchando</span>
+                        <strong>Mi playlist del mes</strong>
+                    </div>
+
+                    <div>
+                        <span>Leyendo</span>
+                        <strong>Algo medio extraño</strong>
+                    </div>
+
+                    <div>
+                        <span>Ubicación</span>
+                        <strong>Ciudad Juárez</strong>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section class="seccion sobre-mi" id="sobre-mi">
+            <div class="titulo-seccion">
+                <p>01 / SOBRE MÍ</p>
+                <h2>La persona detrás de la pantalla</h2>
+            </div>
+
+            <div class="sobre-mi-contenido">
+                <div class="retrato">
+                    <div class="marco-foto">
+                        <img
+                            src="imagenes/perfil.jpg"
+                            alt="Fotografía de Yohali"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('sin-foto')"
+                        >
+
+                        <div class="foto-placeholder">
+                            <span>Tu foto</span>
+                            <small>imagenes/perfil.jpg</small>
+                        </div>
+                    </div>
+
+                    <p class="pie-foto">
+                        Una foto mía pa q me conozcan.
+                    </p>
+                </div>
+
+                <div class="texto-sobre-mi">
+                    <p class="texto-grande">
+                        Soy Yohali, estudiante de Negocios Internacionales,
+                        profesional y acumuladora de experiencias.
+                    </p>
+
+                    <p>
+                        Soy chica STEM atrapada en los negocios, interesada por
+                        la música, el arte, y cualquier idea
+                        que me haga caer durante tres horas en un agujero
+                        de Wikipedia.
+                    </p>
+
+                    <p>
+                        Hice esto sitio por diversión. No pretende ser una
+                        marca personal perfectamente calculada ni convencer
+                        a nadie de contratarme. Es simplemente un espacio
+                        propio donde puedo publicar cosas sin depender por
+                        completo de una red social. Gino Cesar me inspiro a 
+                        hacer esto, honestamente considero que es una persona 
+                        super cool y super creativa y asi
+                    </p>
+
+                    <div class="datos-personales">
+                        <div>
+                            <span>Ciudad</span>
+                            <strong>Ciudad Juárez, México</strong>
+                        </div>
+
+                        <div>
+                            <span>Intereses</span>
+                            <strong>Música, tecnología, arte y negocios</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG -->
+        <section class="seccion blog" id="blog">
+            <div class="titulo-seccion titulo-con-boton">
+                <div>
+                    <p>02 / BLOG</p>
+                    <h2>Últimas publicaciones</h2>
+                </div>
+
+                <span class="contador-publicaciones">3 entradas</span>
+            </div>
+
+            <div class="publicaciones">
+                <article class="publicacion publicacion-destacada">
+                    <div class="imagen-publicacion imagen-gradiente">
+                        <span class="categoria">Pensamientos</span>
+                        <span class="numero-publicacion">01</span>
+                    </div>
+
+                    <div class="contenido-publicacion">
+                        <p class="fecha">28 de julio de 2026 · 4 min</p>
+
+                        <h3>Por qué decidí crear mi propio rincón de internet</h3>
+
+                        <p>
+                            Cesar taught me!!! tho las redes sociales se sienten prestadas. Este sitio,
+                            en cambio, puede crecer, cambiar y ponerse extraño
+                            conmigo. 
+                        </p>
+
+                        <button
+                            class="enlace-leer"
+                            data-articulo="articulo-uno"
+                        >
+                            Leer publicación →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="publicacion">
+                    <div class="imagen-publicacion imagen-musica">
+                        <span class="categoria">Música</span>
+                        <span class="simbolo-grande">♫</span>
+                    </div>
+
+                    <div class="contenido-publicacion">
+                        <p class="fecha">20 de julio de 2026 · 3 min</p>
+
+                        <h3>Canciones que no he dejado de repetir</h3>
+
+                        <p>
+                            Una pequeña colección de canciones que actualmente
+                            viven sin pagar renta en mi cabeza.
+                        </p>
+
+                        <button
+                            class="enlace-leer"
+                            data-articulo="articulo-dos"
+                        >
+                            Leer publicación →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="publicacion">
+                    <div class="imagen-publicacion imagen-ideas">
+                        <span class="categoria">Ideas</span>
+                        <span class="simbolo-grande">✦</span>
+                    </div>
+
+                    <div class="contenido-publicacion">
+                        <p class="fecha">12 de julio de 2026 · 5 min</p>
+
+                        <h3>La lista de cosas que quiero aprender</h3>
+
+                        <p>
+                            Programación, tarot, diseño, música, IA
+                            y probablemente mil cosas mas
+                        </p>
+
+                        <button
+                            class="enlace-leer"
+                            data-articulo="articulo-tres"
+                        >
+                            Leer publicación →
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAVORITOS -->
+        <section class="seccion favoritos" id="favoritos">
+            <div class="titulo-seccion">
+                <p>03 / FAVORITOS DEL MOMENTO</p>
+                <h2>Cosas que me gustan últimamente</h2>
+            </div>
+
+            <div class="cuadricula-favoritos">
+                <article class="favorito">
+                    <span class="icono-favorito">♫</span>
+                    <p>MÚSICA</p>
+                    <h3>Mi canción actual</h3>
+                    <span>
+                        Una de la rosalia que no se como se llama
+                    </span>
+                </article>
+
+                <article class="favorito">
+                    <span class="icono-favorito">◉</span>
+                    <p>PELÍCULA</p>
+                    <h3>Mi película actual</h3>
+                    <span>
+                        No se brouuu. no wacho movies
+                    </span>
+                </article>
+
+                <article class="favorito">
+                    <span class="icono-favorito">▤</span>
+                    <p>LIBRO</p>
+                    <h3>Mi lectura actual</h3>
+                    <span>
+                        The happiness hypothesis de Jonathan Hadit
+                    </span>
+                </article>
+
+                <article class="favorito">
+                    <span class="icono-favorito">✦</span>
+                    <p>OBSESIÓN</p>
+                    <h3>Crear páginas web</h3>
+                    <span>
+                        rn es mi obsesion
+                    </span>
+                </article>
+            </div>
+        </section>
+
+        <!-- FRASE -->
+        <section class="frase">
+            <p>
+                “Internet era más divertido cuando todos tenían
+                páginas un poco feas y completamente personales.”
+            </p>
+
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="seccion contacto" id="contacto">
+            <div class="titulo-seccion">
+                <p>04 / CONTACTO</p>
+                <h2>Puedes encontrarme por aquí</h2>
+            </div>
+
+            <div class="contacto-contenido">
+                <p>
+                    Puedes escribirme para compartir música, recomendarme
+                    alguna película, hablar de una idea extraña o simplemente
+                    saludar. amo las ideas raras btw
+                </p>
+
+                <div class="enlaces-contacto">
+                    <a href="mailto:A01241561@tec.mx">
+                        Correo ↗
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram ↗
+                    </a>
+
+                    <a
+                        href="https://github.com/aliwalli"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub ↗
+                    </a>
+
+                    <a
+                        href="https://open.spotify.com/user/31c6dekiq6ol7gnngf3kanqnbzpu?si=52b52c1421b14b1d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Spotify ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Hecho por Ali Torres con HTML, CSS y JavaScript
+        </p>
+
+        <p id="anio"></p>
+    </footer>
+
+    <!-- VENTANA DE ARTÍCULOS -->
+    <div
+        class="modal"
+        id="modalArticulo"
+        aria-hidden="true"
+    >
+        <div class="fondo-modal" id="fondoModal"></div>
+
+        <article class="ventana-articulo">
+            <button
+                class="cerrar-modal"
+                id="cerrarModal"
+                aria-label="Cerrar artículo"
+            >
+                ×
+            </button>
+
+            <div id="contenidoModal"></div>
+        </article>
+    </div>
+
+    <!-- ARTÍCULOS OCULTOS -->
+    <div class="articulos-ocultos">
+        <article id="articulo-uno">
+            <p class="categoria-modal">PENSAMIENTOS</p>
+
+            <h2>Por qué decidí crear mi propio rincón de internet</h2>
+
+            <p class="fecha-modal">28 de julio de 2026</p>
+
+            <p>
+                Nunca se me habia ocurrido tener una página personal
+                nmms soy programadora junior, pero pensaba que esto era para
+                personas con algo extremadamente importante que decir.
+                Después cesar me hizo entender que no hacía falta ninguna de esas cosas.
+            </p>
+
+            <p>
+                Una página personal puede ser simplemente una colección
+                de momentos, ideas, recomendaciones, fotografías y etapas.
+                No necesita convertirse en un negocio ni tener una
+                estrategia perfecta.
+            </p>
+
+            <blockquote>
+                Este espacio no tiene que ser útil todo el tiempo.
+                También puede existir únicamente porque me parece divertido.
+            </blockquote>
+
+            <p>
+                Así comenzó este pequeño sitio. Probablemente cambiará
+                muchas veces, tendrá secciones innecesarias y quizá algún
+                día incluya cosas que todavía no imagino. Esa libertad es
+                precisamente lo que más me gusta.
+            </p>
+        </article>
+
+        <article id="articulo-dos">
+            <p class="categoria-modal">MÚSICA</p>
+
+            <h2>Canciones que no he dejado de repetir</h2>
+
+            <p class="fecha-modal">20 de julio de 2026</p>
+
+            <p>
+                Esto es sobre las canciones, artistas o álbumes
+                que estoy escuchando. Voy a ver como agregar enlaces de Spotify,
+                videos o incluso una lista completa.
+            </p>
+
+            <h3>La lista de esta semana</h3>
+
+            <ol>
+                <li>99 Luftballoons — Nena</li>
+                <li>Naked in Manhattan — Chappel Roan</li>
+                <li>La cumbia de gino cesar que no se como se llama — @Dakotamaiki</li>
+                <li>Damaso — GERARDO ORTIZ</li>
+            </ol>
+
+            <p>
+                SUper random, pero ps asi soy yo.
+                ni modo que alguien me juzgue
+            </p>
+        </article>
+
+        <article id="articulo-tres">
+            <p class="categoria-modal">IDEAS</p>
+
+            <h2>La lista de cosas que quiero aprender</h2>
+
+            <p class="fecha-modal">12 de julio de 2026</p>
+
+            <p>
+                Tengo la mala costumbre de interesarme en demasiadas cosas
+                al mismo tiempo. En lugar de combatirla, decidí documentarla.
+            </p>
+
+            <ul>
+                <li>Construir páginas web.</li>
+                <li>Aprender más sobre inteligencia artificial.</li>
+                <li>Mejorar mi aleman.</li>
+                <li>Entender mejor la producción musical.</li>
+                <li>Leer sobre arte, simbolismo y magia.</li>
+            </ul>
+
+            <p>
+                Seguramente esta lista cambiará. Tal vez esa sea la idea.
+            </p>
+        </article>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
