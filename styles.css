@@ -1902,3 +1902,39 @@ body.tema-oscuro #cielo-estrellado {
     cursor: pointer;
     font-size: 0.85rem;
 }
+/* =========================================
+   BOTONES Y MODAL DE RECOMENDACIONES
+========================================= */
+
+.boton-recomendar {
+    background: transparent;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    color: var(--texto);
+    cursor: pointer;
+    font-family: "DM Mono", monospace;
+    font-size: 0.7rem;
+    margin-top: 20px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.favorito:hover .boton-recomendar {
+    background: #171717;
+    border-color: #171717;
+    color: var(--superficie);
+}
+
+.boton-recomendar:hover {
+    transform: translateY(-2px);
+}
+
+.ventana-form {
+    max-width: 520px;
+}
+
+.ventana-form .campo-form {
+    margin-top: 14px;
+}
