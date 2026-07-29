@@ -620,3 +620,84 @@ window.onclick = function(event) {
         cerrarOraculo();
     }
 }
+/* =========================================
+   MODAL Y ENVÍO DE RECOMENDACIONES
+========================================= */
+
+const modalRec = document.getElementById("modalRecomendacion");
+const cerrarModalRec = document.getElementById("cerrarModalRecomendacion");
+const fondoModalRec = document.getElementById("fondoModalRecomendacion");
+const botonesRecomendar = document.querySelectorAll(".boton-recomendar");
+
+const inputTipo = document.getElementById("tipoRecomendacion");
+const tituloTipo = document.getElementById("tituloTipoRecomendacion");
+const formRec = document.getElementById("formRecomendaciones");
+const mensajeExitoRec = document.getElementById("mensajeExitoRec");
+
+botonesRecomendar.forEach((boton) => {
+    boton.addEventListener("click", () => {
+        const tipo = boton.dataset.tipo || "General";
+        
+        if (inputTipo) inputTipo.value = tipo;
+        if (tituloTipo) tituloTipo.textContent = `RECOMENDACIÓN · ${tipo.toUpperCase()}`;
+        
+        if (modalRec) {
+            modalRec.classList.add("visible");
+            modalRec.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-abierto");
+        }
+    });
+});
+
+function cerrarRecomendacionModal() {
+    if (modalRec) {
+        modalRec.classList.remove("visible");
+        modalRec.setAttribute("aria-hidden", "true");
+    }
+    document.body.classList.remove("modal-abierto");
+    
+    // Resetear formulario para el próximo uso
+    if (mensajeExitoRec) mensajeExitoRec.style.display = "none";
+    if (formRec) formRec.style.display = "block";
+}
+
+if (cerrarModalRec) cerrarModalRec.addEventListener("click", cerrarRecomendacionModal);
+if (fondoModalRec) fondoModalRec.addEventListener("click", cerrarRecomendacionModal);
+
+// Envío en segundo plano (Fetch) para que la página no recargue ni cambie de pestaña
+if (formRec) {
+    formRec.addEventListener("submit", function (e) {
+        e.preventDefault();
+        
+        const botonSubmit = formRec.querySelector('button[type="submit"]');
+        botonSubmit.textContent = "Enviando...";
+        botonSubmit.disabled = true;
+
+        const formData = new FormData(formRec);
+
+        fetch(formRec.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                formRec.reset();
+                formRec.style.display = "none";
+                if (mensajeExitoRec) mensajeExitoRec.style.display = "block";
+                setTimeout(cerrarRecomendacionModal, 2500);
+            } else {
+                alert("Hubo un detalle al enviar tu recomendación. Inténtalo de nuevo.");
+            }
+        })
+        .catch(() => {
+            alert("Ocurrió un error al conectar con el servidor.");
+        })
+        .finally(() => {
+            botonSubmit.textContent = "Enviar recomendación 🚀";
+            botonSubmit.disabled = false;
+        });
+    });
+}
