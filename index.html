@@ -499,51 +499,48 @@
         </div>
     </div>
 </section>
-        <!-- FAVORITOS -->
-        <section class="seccion favoritos" id="favoritos">
-            <div class="titulo-seccion">
-                <p>03 / FAVORITOS DEL MOMENTO</p>
-                <h2>Cosas que me gustan últimamente</h2>
-            </div>
 
-            <div class="cuadricula-favoritos">
-                <article class="favorito">
-                    <span class="icono-favorito">♫</span>
-                    <p>MÚSICA</p>
-                    <h3>Mi canción actual</h3>
-                    <span>
-                        Time - Pink Floyd!!!!
-                    </span>
-                </article>
+<!-- FAVORITOS -->
+<section class="seccion favoritos" id="favoritos">
+    <div class="titulo-seccion">
+        <p>03 / FAVORITOS DEL MOMENTO</p>
+        <h2>Cosas que me gustan últimamente</h2>
+    </div>
 
-                <article class="favorito">
-                    <span class="icono-favorito">◉</span>
-                    <p>PELÍCULA</p>
-                    <h3>Mi película actual</h3>
-                    <span>
-                        No se brouuu. no wacho movies
-                    </span>
-                </article>
+    <div class="cuadricula-favoritos">
+        <article class="favorito">
+            <span class="icono-favorito">♫</span>
+            <p>MÚSICA</p>
+            <h3>Mi canción actual</h3>
+            <span>Time - Pink Floyd!!!!</span>
+            <button class="boton-recomendar" data-tipo="Música">pásame tu playlist</button>
+        </article>
 
-                <article class="favorito">
-                    <span class="icono-favorito">▤</span>
-                    <p>LIBRO</p>
-                    <h3>Mi lectura actual</h3>
-                    <span>
-                        The happiness hypothesis de Jonathan Hadit
-                    </span>
-                </article>
+        <article class="favorito">
+            <span class="icono-favorito">◉</span>
+            <p>PELÍCULA</p>
+            <h3>Mi película actual</h3>
+            <span>No se brouuu. no wacho movies</span>
+            <button class="boton-recomendar" data-tipo="Película">Recomiendame movies!</button>
+        </article>
 
-                <article class="favorito">
-                    <span class="icono-favorito">✦</span>
-                    <p>OBSESIÓN</p>
-                    <h3>Crear páginas web</h3>
-                    <span>
-                        rn es mi obsesion
-                    </span>
-                </article>
-            </div>
-        </section>
+        <article class="favorito">
+            <span class="icono-favorito">▤</span>
+            <p>LIBRO</p>
+            <h3>Mi lectura actual</h3>
+            <span>The happiness hypothesis de Jonathan Hadit</span>
+            <button class="boton-recomendar" data-tipo="Libro">Recomiendame un libro chido</button>
+        </article>
+
+        <article class="favorito">
+            <span class="icono-favorito">✦</span>
+            <p>OBSESIÓN</p>
+            <h3>Crear páginas web</h3>
+            <span>rn es mi obsesion</span>
+            <button class="boton-recomendar" data-tipo="Cosa Cool">Platicame algo interesante</button>
+        </article>
+    </div>
+</section>
 
         <!-- FRASE -->
         <section class="frase">
@@ -599,6 +596,48 @@
                 </div>
             </div>
         </section>
+        <!-- MODAL DE RECOMENDACIONES -->
+<div class="modal" id="modalRecomendacion" aria-hidden="true">
+    <div class="fondo-modal" id="fondoModalRecomendacion"></div>
+    
+    <div class="ventana-articulo ventana-form">
+        <button class="cerrar-modal" id="cerrarModalRecomendacion" aria-label="Cerrar modal">×</button>
+
+        <div class="contenido-modal-rec">
+            <p class="categoria-modal" id="tituloTipoRecomendacion">RECOMENDACIÓN</p>
+            <h2>¡Déjame una recomendación! ✨</h2>
+            <p style="margin-bottom: 20px;">Rolitas, películas, libros o cualquier cosa que valga la pena.</p>
+
+            <form id="formRecomendaciones" action="https://formsubmit.co/A01241561@tec.mx" method="POST">
+                <!-- Configuraciones de FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="campo-form">
+                    <label for="tipoRecomendacion">Categoría</label>
+                    <input type="text" id="tipoRecomendacion" name="Categoria" readonly>
+                </div>
+
+                <div class="campo-form">
+                    <label for="nombreUsuario">Tu nombre o apodo (opcional)</label>
+                    <input type="text" id="nombreUsuario" name="Nombre" placeholder="Ej. Un compa de internet">
+                </div>
+
+                <div class="campo-form">
+                    <label for="mensajeRecomendacion">Tu recomendación / enlace / playlist</label>
+                    <textarea id="mensajeRecomendacion" name="Recomendación" rows="4" required placeholder="Pon aquí el nombre de la peli, el libro o el link de Spotify/YouTube..."></textarea>
+                </div>
+
+                <button type="submit" class="boton-guardar" style="margin-top: 15px; width: 100%;">Enviar recomendación 🚀</button>
+            </form>
+
+            <div id="mensajeExitoRec" style="display: none; text-align: center; padding: 20px 0;">
+                <p style="font-size: 1.2rem; color: var(--acento);">¡Gracias por la recomendación! 🎉</p>
+                <p style="font-size: 0.9rem; margin-top: 8px;">Prometo revisarla pronto.</p>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
 
     <footer>
