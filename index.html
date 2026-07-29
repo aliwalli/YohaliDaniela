@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="El blog personal de Yohali: pensamientos, música, fotografías y cosas misticas que no tienen nada que ver con navidad."
+    >
+
+    <title>Aliiii</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="globos-luftballoons" id="globosLuftballoons">
+    <span class="globo globo-1"></span>
+    <span class="globo globo-2"></span>
+    <span class="globo globo-3"></span>
+    <span class="globo globo-4"></span>
+    <span class="globo globo-5"></span>
+    <span class="globo globo-6"></span>
+    <span class="globo globo-7"></span>
+    <span class="globo globo-8"></span>
+</div>
+    <canvas id="cielo-estrellado"></canvas>
+    <header class="encabezado">
+        <a href="#inicio" class="logo">
+            ALI<span>★</span>
+        </a>
+
+        <nav class="navegacion" id="navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#blog">Blog</a>
+            <a href="#recuerdos">Recuerdos</a>
+            <a href="#musica">Música</a>
+            <a href="#favoritos">Favoritos</a>
+            <a href="#contacto">Contacto</a>
+            
+        </nav>
+
+
+        <div class="acciones">
+            <button
+                id="botonTema"
+                class="boton-tema"
+                aria-label="Cambiar tema"
+                title="Cambiar tema"
+            >
+                ☾
+            </button>
+
+            <button
+                id="botonMenu"
+                class="boton-menu"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- PORTADA -->
+        <section class="portada" id="inicio">
+            <div class="decoracion decoracion-uno"></div>
+            <div class="decoracion decoracion-dos"></div>
+
+            <div class="portada-contenido">
+                <p class="etiqueta">BIENVENIDEEEE</p>
+
+                <h1>
+                    Hola, soy Yohali. Ali pa los compas
+                    <span>Este es mi rincón personal.</span>
+                </h1>
+
+                <p class="introduccion">
+                    Un lugar para guardar pensamientos, música, fotografías,
+                    obsesiones temporales, recuerdos y todas esas cosas que
+                    no caben en una biografía de Instagram.
+                </p>
+
+                <div class="botones-portada">
+                    <a href="#blog" class="boton boton-principal">
+                        Leer el blog
+                    </a>
+
+                    <a href="#sobre-mi" class="boton boton-secundario">
+                        Conocerme un poco
+                    </a>
+                </div>
+
+                <p class="nota-portada">
+                    Actualmente pensando demasiado y escuchando música.
+                </p>
+            </div>
+
+<!-- TARJETA DE ESTADO DINÁMICA -->
+<div class="tarjeta-estado" id="tarjetaEstado">
+    
+    <!-- MODO VISUALIZACIÓN -->
+    <div class="vista-estado" id="vistaEstado">
+        <div class="estado-superior">
+            <span class="etiqueta-estado">ESTADO ACTUAL</span>
+            <div class="indicador"></div>
+        </div>
+
+        <p class="emoji-estado" id="verEmoji">☕</p>
+        <h2 id="verTitulo">Construyendo este lugar</h2>
+        <p id="verDesc">Esta página probablemente siempre estará en proceso. Esa es parte de la gracia.</p>
+
+        <button class="boton-editar-tarjeta" id="btnEditarEstado" title="Editar Estado">
+            ✏️ Editar
+        </button>
+    </div>
+
+    <!-- MODO FORMULARIO (Oculto por defecto) -->
+    <form class="form-estado" id="formEstado" style="display: none;">
+        <div class="estado-superior">
+            <span class="etiqueta-estado">ACTUALIZAR ESTADO</span>
+        </div>
+
+        <div class="campo-form">
+            <label>Emoji / Ícono</label>
+            <input type="text" id="inputEmoji" maxlength="4" placeholder="☕, 🎧, 📖">
+        </div>
+
+        <div class="campo-form">
+            <label>Título</label>
+            <input type="text" id="inputTitulo" placeholder="¿Qué estás haciendo?">
+        </div>
+
+        <div class="campo-form">
+            <label>Descripción</label>
+            <textarea id="inputDesc" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+        </div>
+
+        <div class="acciones-form">
+            <button type="button" class="boton-cancelar" id="btnCancelarEstado">Cancelar</button>
+            <button type="submit" class="boton-guardar">Publicar</button>
+        </div>
+    </form>
+
+</div>
+
+                <!-- Botón del Oráculo -->
+<button class="btn-oraculo" onclick="abrirOraculo()">
+    <span>☽ Consultar el Oráculo ✧</span>
+</button>
+
+<!-- Ventana Flotante / Modal -->
+<div id="modal-oraculo" class="modal-oraculo">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" onclick="cerrarOraculo()">&times;</span>
+        <div class="icono-oraculo">✵</div>
+        <h3>La carta del día</h3>
+        <p id="mensaje-oraculo">Cargando sabiduría...</p>
+        <button class="btn-otra-frase" onclick="obtenerReflexion()">Extraer otra lectura</button>
+    </div>
+</div>
+            </aside>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section class="seccion sobre-mi" id="sobre-mi">
+            <div class="titulo-seccion">
+                <p>01 / SOBRE MÍ</p>
+                <h2>La persona detrás de la pantalla</h2>
+            </div>
+
+            <div class="sobre-mi-contenido">
+                <div class="retrato">
+                    <div class="marco-foto">
+                        <img
+                            src="imagenes/perfil.jpg"
+                            alt="Fotografía de Yohali"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('sin-foto')"
+                        >
+
+                        <div class="foto-placeholder">
+                            <span>Tu foto</span>
+                            <small>imagenes/perfil.jpg</small>
+                        </div>
+                    </div>
+
+                    <p class="pie-foto">
+                        Una foto mía pa q me conozcan.
+                    </p>
+                </div>
+
+                <div class="texto-sobre-mi">
+                    <p class="texto-grande">
+                        Soy Yohali, estudiante de Negocios Internacionales,
+                        profesional y acumuladora de experiencias.
+                    </p>
+
+                    <p>
+                        Soy chica STEM atrapada en los negocios, interesada por
+                        la música, el arte, y cualquier idea
+                        que me haga caer durante tres horas en un agujero
+                        de Wikipedia.
+                    </p>
+
+                    <p>
+                        Hice esto sitio por diversión. No pretende ser una
+                        marca personal perfectamente calculada ni convencer
+                        a nadie de contratarme. Es simplemente un espacio
+                        propio donde puedo publicar cosas sin depender por
+                        completo de una red social. Gino Cesar me inspiro a 
+                        hacer esto, honestamente considero que es una persona 
+                        super cool y super creativa y asi
+                    </p>
+
+                    <div class="datos-personales">
+
+                        <div>
+                            <span>Intereses</span>
+                            <strong>Música, tecnología, arte y negocios</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG -->
+         
+        <section class="seccion blog" id="blog">
+            <div class="titulo-seccion titulo-con-boton">
+                <div>
+                    <p>02 / BLOG</p>
+                    <h2>Últimas publicaciones</h2>
+                </div>
+
+                <span class="contador-publicaciones">3 entradas</span>
+            </div>
+
+            <div class="publicaciones">
+                <article class="publicacion publicacion-destacada">
+                    <div class="imagen-publicacion imagen-gradiente">
+                        <span class="categoria">Pensamientos</span>
+                        <span class="numero-publicacion">01</span>
+                    </div>
+
+                    <div class="contenido-publicacion">
+                        <p class="fecha">28 de julio de 2026 · 4 min</p>
+
+                        <h3>Por qué decidí crear mi propio rincón de internet</h3>
+
+                        <p>
+                            Cesar taught me!!! tho las redes sociales se sienten prestadas. Este sitio,
+                            en cambio, puede crecer, cambiar y ponerse extraño
+                            conmigo. 
+                        </p>
+
+                        <button
+                            class="enlace-leer"
+                            data-articulo="articulo-uno"
+                        >
+                            Leer publicación →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="publicacion">
+                    <div class="imagen-publicacion imagen-musica">
+                        <span class="categoria">Música</span>
+                        <span class="simbolo-grande">♫</span>
+                    </div>
+
+                    <div class="contenido-publicacion">
+                        <p class="fecha">20 de julio de 2026 · 3 min</p>
+
+                        <h3>Canciones que no he dejado de repetir</h3>
+
+                        <p>
+                            Una pequeña colección de canciones que actualmente
+                            viven sin pagar renta en mi cabeza.
+                        </p>
+
+                        <button
+                            class="enlace-leer"
+                            data-articulo="articulo-dos"
+                        >
+                            Leer publicación →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="publicacion">
+                    <div class="imagen-publicacion imagen-ideas">
+                        <span class="categoria">Ideas</span>
+                        <span class="simbolo-grande">✦</span>
+                    </div>
+
+                    <div class="contenido-publicacion">
+                        <p class="fecha">12 de julio de 2026 · 5 min</p>
+
+                        <h3>La lista de cosas que quiero aprender</h3>
+
+                        <p>
+                            Programación, tarot, diseño, música, IA
+                            y probablemente mil cosas mas
+                        </p>
+
+                        <button
+                            class="enlace-leer"
+                            data-articulo="articulo-tres"
+                        >
+                            Leer publicación →
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- RECUERDOS -->
+<section class="seccion recuerdos" id="recuerdos">
+    <div class="titulo-seccion">
+        <p>04 / RECUERDOS</p>
+        <h2>Fotos que quiero guardar aquí</h2>
+    </div>
+
+    <p class="introduccion-recuerdos">
+        Algunas fotos, momentos y cosas que me dieron ganas de conservar
+        en mi pequeño rincón de internet. Puedes moverlas.
+    </p>
+
+    <div class="mesa-polaroids" id="mesaPolaroids">
+        <article
+            class="polaroid"
+            data-rotacion="-7"
+            style="--rotacion: -7deg;"
+        >
+            <img
+                src="imagenes/foto-1.jpeg"
+                alt="Primer recuerdo de Yohali"
+                draggable="false"
+            >
+
+            <div class="texto-polaroid">
+                <strong>Un día bonito</strong>
+                <span>Me gustan mucho las flores</span>
+            </div>
+        </article>
+
+        <article
+            class="polaroid"
+            data-rotacion="5"
+            style="--rotacion: 5deg;"
+        >
+            <img
+                src="imagenes/foto-2.jpg"
+                alt="Segundo recuerdo de Yohali"
+                draggable="false"
+            >
+
+            <div class="texto-polaroid">
+                <strong>Algo que me pasó</strong>
+                <span>en la prepa</span>
+            </div>
+        </article>
+
+        <article
+            class="polaroid"
+            data-rotacion="-3"
+            style="--rotacion: -3deg;"
+        >
+            <img
+                src="imagenes/foto-3.jpg"
+                alt="Tercer recuerdo de Yohali"
+                draggable="false"
+            >
+
+            <div class="texto-polaroid">
+                <strong>De esos días</strong>
+                <span>Sin contexto</span>
+            </div>
+        </article>
+
+        <article
+            class="polaroid"
+            data-rotacion="8"
+            style="--rotacion: 8deg;"
+        >
+            <img
+                src="imagenes/foto-4.jpg"
+                alt="Cuarto recuerdo de Yohali"
+                draggable="false"
+            >
+
+            <div class="texto-polaroid">
+                <strong>Una foto</strong>
+                <span>JASNKAJSD q gei</span>
+            </div>
+        </article>
+    </div>
+
+    <p class="pista-polaroids">
+        ✦ Arrastra las fotos y acomódalas como quieras.
+    </p>
+</section>
+<!-- MÚSICA -->
+<!-- MÚSICA -->
+<section class="seccion musica" id="musica">
+    <div class="titulo-seccion">
+        <p>04 / EN REPRODUCCIÓN</p>
+        <h2>Lo que vive en mis audífonos</h2>
+    </div>
+
+    <div class="reproductor-time">
+        <div class="zona-vinilo">
+            <div class="vinilo-time" id="viniloTime">
+                <div class="etiqueta-vinilo">
+    <span id="textoVinilo">TIME</span>
+    <small id="artistaVinilo">PINK FLOYD</small>
+</div>
+            <p class="nota-vinilo">
+                THE DARK SIDE OF THE MOON · 1973
+            </p>
+        </div>
+
+        <div class="zona-cancion">
+            <p class="estado-musica">
+                ESCUCHANDO ÚLTIMAMENTE
+            </p>
+
+            <h3>Time</h3>
+
+            <p class="artista-musica">
+                Pink Floyd
+            </p>
+
+            <p class="descripcion-musica">
+                esta rolita me pega mucho porque habla de las decisiones que
+                dejamos para después y esa sensación extraña de descubrir
+                que la vida siguió avanzando.
+            </p>
+            <div class="selector-canciones">
+    <button
+        class="boton-cancion activo"
+        type="button"
+        data-cancion="time"
+    >
+        Time
+        <span>Pink Floyd</span>
+    </button>
+
+    <button
+        class="boton-cancion"
+        type="button"
+        data-cancion="luftballoons"
+    >
+        99 Luftballoons
+        <span>Nena</span>
+    </button>
+</div>
+            <button
+                class="boton-ambiente"
+                id="botonAmbiente"
+                type="button"
+                disabled
+>
+                 Cargando Spotify...
+            </button>
+            <p class="mensaje-ambiente" id="mensajeAmbiente">
+                Activa el ambiente y después presiona Play en Spotify.
+            </p>
+
+            <div class="reloj-time" id="relojTime">
+                <div class="reloj-cara">
+                    <span class="marca marca-12">12</span>
+                    <span class="marca marca-3">3</span>
+                    <span class="marca marca-6">6</span>
+                    <span class="marca marca-9">9</span>
+                    <div class="manecilla manecilla-hora"></div>
+                    <div class="manecilla manecilla-minuto"></div>
+                    <div class="manecilla manecilla-segundo"></div>
+
+                    <div class="centro-reloj"></div>
+                </div>
+            </div>
+
+            <div class="spotify-embed">
+    <div id="spotifyPlayer"></div>
+</div>
+            <a
+                class="abrir-spotify"
+                href="https://open.spotify.com/intl-es/track/3TO7bbrUKrOSPGRTB5MeCz"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Abrir en Spotify ↗
+            </a>
+        </div>
+    </div>
+</section>
+        <!-- FAVORITOS -->
+        <section class="seccion favoritos" id="favoritos">
+            <div class="titulo-seccion">
+                <p>03 / FAVORITOS DEL MOMENTO</p>
+                <h2>Cosas que me gustan últimamente</h2>
+            </div>
+
+            <div class="cuadricula-favoritos">
+                <article class="favorito">
+                    <span class="icono-favorito">♫</span>
+                    <p>MÚSICA</p>
+                    <h3>Mi canción actual</h3>
+                    <span>
+                        Una de la rosalia que no se como se llama
+                    </span>
+                </article>
+
+                <article class="favorito">
+                    <span class="icono-favorito">◉</span>
+                    <p>PELÍCULA</p>
+                    <h3>Mi película actual</h3>
+                    <span>
+                        No se brouuu. no wacho movies
+                    </span>
+                </article>
+
+                <article class="favorito">
+                    <span class="icono-favorito">▤</span>
+                    <p>LIBRO</p>
+                    <h3>Mi lectura actual</h3>
+                    <span>
+                        The happiness hypothesis de Jonathan Hadit
+                    </span>
+                </article>
+
+                <article class="favorito">
+                    <span class="icono-favorito">✦</span>
+                    <p>OBSESIÓN</p>
+                    <h3>Crear páginas web</h3>
+                    <span>
+                        rn es mi obsesion
+                    </span>
+                </article>
+            </div>
+        </section>
+
+        <!-- FRASE -->
+        <section class="frase">
+            <p>
+                “Internet era más divertido cuando todos publicaban
+                lo que querian sin miedo al "que dirán".”
+            </p>
+
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="seccion contacto" id="contacto">
+            <div class="titulo-seccion">
+                <p>05 / CONTACTO</p>
+                <h2>Puedes encontrarme por aquí</h2>
+            </div>
+
+            <div class="contacto-contenido">
+                <p>
+                    Puedes escribirme para compartir música, recomendarme
+                    alguna película, hablar de una idea extraña o simplemente
+                    saludar. amo las ideas raras btw
+                </p>
+
+                <div class="enlaces-contacto">
+                    <a href="mailto:A01241561@tec.mx">
+                        Correo ↗
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram ↗
+                    </a>
+
+                    <a
+                        href="https://github.com/aliwalli"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub ↗
+                    </a>
+
+                    <a
+                        href="https://open.spotify.com/user/31c6dekiq6ol7gnngf3kanqnbzpu?si=52b52c1421b14b1d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Spotify ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Hecho por Ali Torres con HTML, CSS y JavaScript
+        </p>
+
+        <p id="anio"></p>
+    </footer>
+
+    <!-- VENTANA DE ARTÍCULOS -->
+    <div
+        class="modal"
+        id="modalArticulo"
+        aria-hidden="true"
+    >
+        <div class="fondo-modal" id="fondoModal"></div>
+
+        <article class="ventana-articulo">
+            <button
+                class="cerrar-modal"
+                id="cerrarModal"
+                aria-label="Cerrar artículo"
+            >
+                ×
+            </button>
+
+            <div id="contenidoModal"></div>
+        </article>
+    </div>
+
+    <!-- ARTÍCULOS OCULTOS -->
+    <div class="articulos-ocultos">
+        <article id="articulo-uno">
+            <p class="categoria-modal">PENSAMIENTOS</p>
+
+            <h2>Por qué decidí crear mi propio rincón de internet</h2>
+
+            <p class="fecha-modal">28 de julio de 2026</p>
+
+            <p>
+                Nunca se me habia ocurrido tener una página personal
+                nmms soy programadora junior, pero pensaba que esto era para
+                personas con algo extremadamente importante que decir.
+                Después cesar me hizo entender que no hacía falta ninguna de esas cosas.
+            </p>
+
+            <p>
+                Una página personal puede ser simplemente una colección
+                de momentos, ideas, recomendaciones, fotografías y etapas.
+                No necesita convertirse en un negocio ni tener una
+                estrategia perfecta.
+            </p>
+
+            <blockquote>
+                Este espacio no tiene que ser útil todo el tiempo.
+                También puede existir únicamente porque me parece divertido.
+            </blockquote>
+
+            <p>
+                Así comenzó este pequeño sitio. Probablemente cambiará
+                muchas veces, tendrá secciones innecesarias y quizá algún
+                día incluya cosas que todavía no imagino. Esa libertad es
+                precisamente lo que más me gusta.
+            </p>
+        </article>
+
+        <article id="articulo-dos">
+            <p class="categoria-modal">MÚSICA</p>
+
+            <h2>Canciones que no he dejado de repetir</h2>
+
+            <p class="fecha-modal">20 de julio de 2026</p>
+
+            <p>
+                Esto es sobre las canciones, artistas o álbumes
+                que estoy escuchando. Voy a ver como agregar enlaces de Spotify,
+                videos o incluso una lista completa.
+            </p>
+
+            <h3>La lista de esta semana</h3>
+
+            <ol>
+                <li>99 Luftballoons — Nena</li>
+                <li>Naked in Manhattan — Chappel Roan</li>
+                <li>La cumbia de gino cesar que no se como se llama — @Dakotamaiki</li>
+                <li>Damaso — GERARDO ORTIZ</li>
+            </ol>
+
+            <p>
+                SUper random, pero ps asi soy yo.
+                ni modo que alguien me juzgue
+            </p>
+        </article>
+
+        <article id="articulo-tres">
+            <p class="categoria-modal">IDEAS</p>
+
+            <h2>La lista de cosas que quiero aprender</h2>
+
+            <p class="fecha-modal">12 de julio de 2026</p>
+
+            <p>
+                Tengo la mala costumbre de interesarme en demasiadas cosas
+                al mismo tiempo. En lugar de combatirla, decidí documentarla.
+            </p>
+
+            <ul>
+                <li>Construir páginas web.</li>
+                <li>Aprender más sobre inteligencia artificial.</li>
+                <li>Mejorar mi aleman.</li>
+                <li>Entender mejor la producción musical.</li>
+                <li>Leer sobre arte, simbolismo y magia.</li>
+            </ul>
+
+            <p>
+                Seguramente esta lista cambiará. Tal vez esa sea la idea.
+            </p>
+        </article>
+    </div>
+
+    <script src="script.js"></script>
+
+<script
+    src="https://open.spotify.com/embed/iframe-api/v1"
+    async>
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    // Referencias a la vista y al formulario
+    const vistaEstado = document.getElementById("vistaEstado");
+    const formEstado = document.getElementById("formEstado");
+    
+    // Botones
+    const btnEditar = document.getElementById("btnEditarEstado");
+    const btnCancelar = document.getElementById("btnCancelarEstado");
+
+    // Elementos donde se muestra la información
+    const verEmoji = document.getElementById("verEmoji");
+    const verTitulo = document.getElementById("verTitulo");
+    const verDesc = document.getElementById("verDesc");
+
+
+    // Inputs del formulario
+    const inputEmoji = document.getElementById("inputEmoji");
+    const inputTitulo = document.getElementById("inputTitulo");
+    const inputDesc = document.getElementById("inputDesc");
+
+    // 1. CARGAR DATOS GUARDADOS (Si existen en localStorage)
+    const cargarEstadoGuardado = () => {
+        const datosGuardados = JSON.parse(localStorage.getItem("miEstadoActual"));
+        
+        if (datosGuardados) {
+            verEmoji.textContent = datosGuardados.emoji || "☕";
+            verTitulo.textContent = datosGuardados.titulo || "Sin título";
+            verDesc.textContent = datosGuardados.desc || "";
+           }
+    };
+
+    // 2. MOSTRAR FORMULARIO
+    btnEditar.addEventListener("click", () => {
+        // Rellenar inputs con los valores actuales
+        inputEmoji.value = verEmoji.textContent;
+        inputTitulo.value = verTitulo.textContent;
+        inputDesc.value = verDesc.textContent;
+        
+        vistaEstado.style.display = "none";
+        formEstado.style.display = "flex";
+    });
+
+    // 3. CANCELAR EDICIÓN
+    btnCancelar.addEventListener("click", () => {
+        formEstado.style.display = "none";
+        vistaEstado.style.display = "block";
+    });
+
+    // 4. GUARDAR Y PUBLICAR CAMBIOS
+    formEstado.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const nuevoEstado = {
+            emoji: inputEmoji.value.trim() || "☕",
+            titulo: inputTitulo.value.trim() || "Construyendo este lugar",
+            desc: inputDesc.value.trim() || "",
+            };
+
+        // Guardar en localStorage
+        localStorage.setItem("miEstadoActual", JSON.stringify(nuevoEstado));
+
+        // Actualizar la vista inmediatamente
+        cargarEstadoGuardado();
+
+        // Ocultar formulario
+        formEstado.style.display = "none";
+        vistaEstado.style.display = "block";
+    });
+
+    // Inicializar al cargar la página
+    cargarEstadoGuardado();
+});
+</script>
+</body>
+</html>
