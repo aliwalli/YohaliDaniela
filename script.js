@@ -588,11 +588,11 @@ function crearEstrella(x, y) {
     }, 800);
 }
 const reflexiones = [
-    "«Lo que está abajo es como lo que está arriba, y lo que está arriba es como lo que está abajo.» — El Kybalión",
-    "No busques que los eventos sucedan como deseas; desea que sucedan como ocurren.",
-    "En el silencio nocturno es donde las ideas más claras encuentran su cauce.",
+    "Kual cringe, menso, la verguenza es una forma de control social",
+    "Q haria un backyardigan en mi situación?",
+    "Si vas a soñar exagera",
     "«Eso q tiene que ver con navidad????» - Yohali :)",
-    "La luna no apresura sus fases, sin embargo, siempre llega a estar llena.",
+    "No dejes que la nostalgia te hag vovlver a lugares que dolieron",
     "«Eso q tiene que ver con navidad????» - Yohali :)",
     "«La sombra es el laberinto que nos lleva hacia la luz propia.»",
     "«Quien mira hacia afuera, sueña; quien mira hacia adentro, despierta.» — Carl Jung",
